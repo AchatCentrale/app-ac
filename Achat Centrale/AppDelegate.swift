@@ -16,6 +16,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let def = UserDefaults.standard
+        let is_authenticated = def.bool(forKey: "is_authenticated") // return false if not found or stored value
+        let userDetails = userDefaults.object(forKey: "userDetails") as? [Int] ?? [Int]()
+
+        
+        print(userDetails)
+        
+        if is_authenticated {
+            print("ok il est connecté")
+            
+            
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            
+            let HomeMessagerieController = storyBoard.instantiateViewController(withIdentifier: "HomeMessagerie") as! HomeMessagerieController
+            self.window?.rootViewController = HomeMessagerieController
+        }
+        
+        
         return true
     }
 
