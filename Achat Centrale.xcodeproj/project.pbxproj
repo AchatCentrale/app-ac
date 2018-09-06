@@ -10,6 +10,7 @@
 		0E0308F4212ED924009E5DF2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E0308F3212ED924009E5DF2 /* Alamofire.framework */; };
 		0E0308F6212ED924009E5DF2 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E0308F5212ED924009E5DF2 /* SwiftyJSON.framework */; };
 		0E0308F8212EF27C009E5DF2 /* HomeMessagerieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0308F7212EF27C009E5DF2 /* HomeMessagerieController.swift */; };
+		0E9965DC2141806200DEA62C /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E9965DB2141806200DEA62C /* AlamofireImage.framework */; };
 		0EF8C5B4212D9292004B6192 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF8C5B3212D9292004B6192 /* AppDelegate.swift */; };
 		0EF8C5B6212D9293004B6192 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF8C5B5212D9293004B6192 /* ViewController.swift */; };
 		0EF8C5B9212D9293004B6192 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EF8C5B7212D9293004B6192 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 		0E0308F3212ED924009E5DF2 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E0308F5212ED924009E5DF2 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E0308F7212EF27C009E5DF2 /* HomeMessagerieController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMessagerieController.swift; sourceTree = "<group>"; };
+		0E9965DB2141806200DEA62C /* AlamofireImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AlamofireImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EF8C5B0212D9292004B6192 /* Achat Centrale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Achat Centrale.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EF8C5B3212D9292004B6192 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EF8C5B5212D9293004B6192 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E9965DC2141806200DEA62C /* AlamofireImage.framework in Frameworks */,
 				0E0308F4212ED924009E5DF2 /* Alamofire.framework in Frameworks */,
 				0E0308F6212ED924009E5DF2 /* SwiftyJSON.framework in Frameworks */,
 				A4045EF11B73EAC8FF2DD107 /* Pods_Achat_Centrale.framework in Frameworks */,
@@ -144,6 +147,7 @@
 		73C4069A7AC2A0BAFB7B798E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0E9965DB2141806200DEA62C /* AlamofireImage.framework */,
 				0E0308F3212ED924009E5DF2 /* Alamofire.framework */,
 				0E0308F5212ED924009E5DF2 /* SwiftyJSON.framework */,
 				F68F1996DEBACA121CA7C131 /* Pods_Achat_Centrale.framework */,
@@ -230,13 +234,16 @@
 				TargetAttributes = {
 					0EF8C5AF212D9292004B6192 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 					0EF8C5C3212D9295004B6192 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 						TestTargetID = 0EF8C5AF212D9292004B6192;
 					};
 					0EF8C5CE212D9295004B6192 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 						TestTargetID = 0EF8C5AF212D9292004B6192;
 					};
 				};
@@ -315,11 +322,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Achat Centrale/Pods-Achat Centrale-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -521,7 +530,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "AchatCentrale.Achat-Centrale";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -542,7 +551,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "AchatCentrale.Achat-Centrale";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -561,7 +570,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "AchatCentrale.Achat-CentraleTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Achat Centrale.app/Achat Centrale";
 			};
@@ -581,7 +590,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "AchatCentrale.Achat-CentraleTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Achat Centrale.app/Achat Centrale";
 			};
@@ -600,7 +609,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "AchatCentrale.Achat-CentraleUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "Achat Centrale";
 			};
@@ -619,7 +628,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "AchatCentrale.Achat-CentraleUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "Achat Centrale";
 			};

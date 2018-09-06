@@ -46,7 +46,11 @@ class ViewController: UIViewController {
                     
                     let userDefaults = UserDefaults.standard
                     
-                    let clientDetails = [ data["details"]["CL_ID"].intValue,data["details"]["SO_ID"].intValue, data["details"]["CC_ID"].intValue  ]
+                    let clientDetails = [
+                        data["details"]["CL_ID"].intValue,
+                        data["details"]["SO_ID"].intValue,
+                        data["details"]["CC_ID"].intValue
+                    ]
                     
                     userDefaults.set(clientDetails, forKey: "userDetails")
                     

@@ -9,10 +9,16 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import AlamofireImage
+
 
 let userDefaults = UserDefaults.standard
 
 class HomeMessagerieController: UIViewController {
+    
+    
+    
+    @IBOutlet weak var profilPic: UIImageView!
     
 
     @IBOutlet weak var viewHeader: UIView!
@@ -23,8 +29,6 @@ class HomeMessagerieController: UIViewController {
     
     
     @IBAction func logoutAction(_ sender: Any) {
-        
-    
         self.logoutState()
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -32,11 +36,7 @@ class HomeMessagerieController: UIViewController {
         let vc = storyboard.instantiateViewController(withIdentifier: "loginST")
         
         self.present(vc, animated: true, completion: nil)
-        
-        
-        
-        
-        
+
     }
     
     override func viewDidLoad() {
@@ -62,16 +62,23 @@ class HomeMessagerieController: UIViewController {
         Alamofire.request("http://api.achatcentrale.fr/v1/client/details/\(centrale_id)/\(client_id)/\(user_id)").responseJSON { response in
             if let json = response.result.value {
                 let data = JSON(json)
-                print(data["CC_NOM"])
-                self.raisonSoc.text = data["CL_RAISONSOC"].string
-                self.userName.text =  "\(data["CC_PRENOM"].stringValue) \(data["CC_NOM"].stringValue)"
-
+                print(data)
+                self.raisonSoc.text = data["data"]["CL_RAISONSOC"].string
+                self.userName.text =  "\(data["data"]["CC_PRENOM"].stringValue) \(data["data"]["CC_NOM"].stringValue)"
                 
-                
-            }
-            
-         
+                self.loadProfilePic(image_url: data["logo"].stringValue)
+           }
         }
+    }
+    
+    func loadProfilePic(image_url: String) -> Void{
+        
+        Alamofire.request(image_url).responseImage { response in
+            if let image = response.result.value {
+                self.profilPic.image = image
+            }
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
